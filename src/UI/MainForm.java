@@ -119,20 +119,20 @@ public class MainForm extends JFrame {
 		JMenu mnNewMenu_1 = new JMenu("Quản Lý");
 		menuBar.add(mnNewMenu_1);
 
-		 mnuManagerStudent = new JMenuItem("Quản Lý Khách ");
+		 mnuManagerStudent = new JMenuItem("Quản Lý Khách Hàng");
 		mnuManagerStudent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (mStudentPanel == null) {
 					mStudentPanel = new StudentManagementPanel();
 					ImageIcon icon = new ImageIcon(
 							getClass().getResource("/icons/10207-man-student-light-skin-tone-icon-16.png"));
-					tplMainBoard.addTab("Quan ly sinh vien", icon, mStudentPanel, "Quan ly sinh vien");
+					tplMainBoard.addTab("Quản Lý Khách Hàng", icon, mStudentPanel, "Quản Lý Khách Hàng");
 				}
 				tplMainBoard.setSelectedComponent(mStudentPanel);
 			}
 		});
 		mnuManagerStudent.setIcon(
-				new ImageIcon(MainForm.class.getResource("/icons/10207-man-student-light-skin-tone-icon-16.png")));
+				new ImageIcon("D:\\Code\\java\\demo_HSK\\App_QLLK\\src\\icons\\userClient.png"));
 		mnuManagerStudent.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.CTRL_DOWN_MASK));
 		mnNewMenu_1.add(mnuManagerStudent);
 
@@ -158,6 +158,8 @@ public class MainForm extends JFrame {
 		mnNewMenu_1.add(separator_3);
 		
 		 mnuLoaiLinhKien = new JMenuItem("Quản Lý Loại Linh Kiện");
+		 mnuLoaiLinhKien.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, InputEvent.CTRL_DOWN_MASK));
+		 mnuLoaiLinhKien.setIcon(new ImageIcon("D:\\Code\\java\\demo_HSK\\App_QLLK\\src\\icons\\Laptop.16.png"));
 		mnuLoaiLinhKien.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(mLoaiLinhKienPanel == null) {
@@ -175,6 +177,8 @@ public class MainForm extends JFrame {
 		mnNewMenu_1.add(separator_4);
 		
 		 mnuQuanLyNhanVien = new JMenuItem("Quản Lý Nhân Viên");
+		 mnuQuanLyNhanVien.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_DOWN_MASK));
+		 mnuQuanLyNhanVien.setIcon(new ImageIcon("D:\\Code\\java\\demo_HSK\\App_QLLK\\src\\icons\\People.16.png"));
 		 mnuQuanLyNhanVien.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(mQuanLyNhanVienPanel == null) {
@@ -220,6 +224,7 @@ public class MainForm extends JFrame {
 		menuBar.add(mnNewMenu_3);
 		
 		mnuThongKeLuong = new JMenuItem("Thống Kê Lương Nhân Viên");
+		mnuThongKeLuong.setIcon(new ImageIcon("D:\\Code\\java\\demo_HSK\\App_QLLK\\src\\icons\\dollar.16.png"));
 		mnuThongKeLuong.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(mThongKeLUongPanel == null) {
@@ -239,7 +244,7 @@ public class MainForm extends JFrame {
 		mnNewMenu_3.add(mnuThongKeLuong);
 
 		JToolBar toolBar = new JToolBar();
-		toolBar.setBounds(0, 23, 528, 60);
+		toolBar.setBounds(0, 23, 543, 60);
 		contentPane.add(toolBar);
 
 		JButton tbrLogout = new JButton("Đăng Xuất");
@@ -257,24 +262,28 @@ public class MainForm extends JFrame {
 		tbrLogout.setIcon(new ImageIcon(MainForm.class.getResource("/icons/logout-icon-32.png")));
 		toolBar.add(tbrLogout);
 
-		JButton btnNewButton_1 = new JButton("Quản Lý Sinh Viên");
-		btnNewButton_1.setIcon(
-				new ImageIcon(MainForm.class.getResource("/icons/10207-man-student-light-skin-tone-icon-32.png")));
-		toolBar.add(btnNewButton_1);
-
-		JButton btnNewButton_1_1 = new JButton("Quản Lý Điểm");
-		btnNewButton_1_1.setIcon(new ImageIcon(MainForm.class.getResource("/icons/gpa-icon-32.png")));
-		toolBar.add(btnNewButton_1_1);
-
-		 tbrAboutUs = new JButton("Giới Thiệu");
-		tbrAboutUs.addActionListener(new ActionListener() {
+		JButton btnNewButton_1 = new JButton("Quản Lý Linh Kiện");
+		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AboutUsDialog aboutUsDialog = new AboutUsDialog();
-				aboutUsDialog.setVisible(true);
 			}
 		});
-		tbrAboutUs.setIcon(new ImageIcon(MainForm.class.getResource("/icons/Actions-help-about-icon-32.png")));
-		toolBar.add(tbrAboutUs);
+		btnNewButton_1.setIcon(
+				new ImageIcon("D:\\Code\\java\\demo_HSK\\App_QLLK\\src\\icons\\devicesComputer.png"));
+		toolBar.add(btnNewButton_1);
+
+		JButton btnNewButton_1_1 = new JButton("Quản Lý Nhân Viên");
+		btnNewButton_1_1.setIcon(new ImageIcon("D:\\Code\\java\\demo_HSK\\App_QLLK\\src\\icons\\clients.png"));
+		toolBar.add(btnNewButton_1_1);
+		
+				 tbrAboutUs = new JButton("Giới Thiệu");
+				 toolBar.add(tbrAboutUs);
+				 tbrAboutUs.addActionListener(new ActionListener() {
+				 	public void actionPerformed(ActionEvent e) {
+				 		AboutUsDialog aboutUsDialog = new AboutUsDialog();
+				 		aboutUsDialog.setVisible(true);
+				 	}
+				 });
+				 tbrAboutUs.setIcon(new ImageIcon(MainForm.class.getResource("/icons/Actions-help-about-icon-32.png")));
 
 		tplMainBoard = new JTabbedPane(JTabbedPane.TOP);
 		tplMainBoard.setBounds(10, 80, 903, 599);

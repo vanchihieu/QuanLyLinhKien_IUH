@@ -150,7 +150,7 @@ public class LoginDiaLog extends JDialog {
 		sl_contentPanel.putConstraint(SpringLayout.SOUTH, lblLogo, 164, SpringLayout.NORTH, contentPanel);
 		lblLogo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblLogo.setIcon(
-				new ImageIcon(LoginDiaLog.class.getResource("/icons/10207-man-student-light-skin-tone-icon-64.png")));
+				new ImageIcon("D:\\Code\\java\\demo_HSK\\App_QLLK\\src\\icons\\computerLogin.png"));
 		contentPanel.add(lblLogo);
 		{
 			JPanel buttonPane = new JPanel();

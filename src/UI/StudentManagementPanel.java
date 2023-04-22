@@ -65,7 +65,7 @@ public class StudentManagementPanel extends JPanel {
 
 		JSeparator separator = new JSeparator();
 
-		JLabel lblNewLabel_1 = new JLabel("Mã Sinh Viên");
+		JLabel lblNewLabel_1 = new JLabel("Mã Khách Hàng");
 
 		JLabel lblNewLabel_1_1 = new JLabel("Họ Tên");
 
@@ -405,8 +405,7 @@ public class StudentManagementPanel extends JPanel {
 
 		 lblImage = new JLabel("");
 		lblImage.setHorizontalAlignment(SwingConstants.CENTER);
-		lblImage.setIcon(new ImageIcon(
-				StudentManagementPanel.class.getResource("/icons/10207-man-student-light-skin-tone-icon-64.png")));
+		lblImage.setIcon(new ImageIcon("D:\\Code\\java\\demo_HSK\\App_QLLK\\src\\icons\\dogeIcon.png"));
 		lblImage.setBounds(10, 10, 147, 146);
 		panel_1.add(lblImage);
 
