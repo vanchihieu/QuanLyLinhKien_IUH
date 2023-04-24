@@ -305,7 +305,7 @@ public class QuanLyNhanVien extends JPanel {
 
 		table.getRowHeight(30);
 		add(sp);
-		sp.setBounds(22, 362, 879, 185);
+		sp.setBounds(22, 362, 988, 188);
 
 		txtMatKhau = new JPasswordField();
 		txtMatKhau.setBounds(134, 221, 96, 19);
@@ -446,8 +446,8 @@ public class QuanLyNhanVien extends JPanel {
 		
 		NhanVien nhanVien = new NhanVien(maNhanVien, ho, ten, sdt, diaChi, email, gioiTinh, ngayVaoLam, soCCCD, matKhau, maPhongBan);
 		nhanVienDao.capNhatNhanVien(nhanVien);
-		loadData();
 		JOptionPane.showMessageDialog(null, "Cập nhật thành công");
+		loadData();
 		return true;
 	}
 

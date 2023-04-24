@@ -30,6 +30,8 @@ import java.sql.SQLException;
 
 import javax.swing.JTextField;
 import java.awt.Font;
+import javax.swing.UIManager;
+import java.awt.Color;
 
 public class MainForm extends JFrame {
 	private StudentManagementPanel mStudentPanel;
@@ -37,6 +39,7 @@ public class MainForm extends JFrame {
 	private QuanLyLoaiLinhKien mLoaiLinhKienPanel;
 	private QuanLyNhanVien mQuanLyNhanVienPanel;
 	private Salary mThongKeLUongPanel;
+	private QuanLySanPham mQuanLySanPhamPanel;
 	
 	private JPanel contentPane;
 	private JTabbedPane tplMainBoard;
@@ -48,6 +51,7 @@ public class MainForm extends JFrame {
 	private JMenuItem mnuLoaiLinhKien;
 	private JMenuItem mnuQuanLyNhanVien;
 	private JMenuItem mnuThongKeLuong;
+	private JMenuItem mnuQuanLyLinhKien;
 	/**
 	 * Launch the application.
 	 */
@@ -68,6 +72,7 @@ public class MainForm extends JFrame {
 	 * Create the frame.
 	 */
 	public MainForm() {
+		setBackground(new Color(255, 255, 255));
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowOpened(WindowEvent e) {
@@ -86,16 +91,22 @@ public class MainForm extends JFrame {
 	
 		
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JMenuBar menuBar = new JMenuBar();
+		menuBar.setForeground(new Color(255, 51, 102));
+		menuBar.setBackground(new Color(152, 251, 152));
 		menuBar.setBounds(0, 0, 293, 22);
 		contentPane.add(menuBar);
 
 		JMenu mnNewMenu = new JMenu("Hệ Thống");
+		mnNewMenu.setFont(new Font("Segoe UI", Font.BOLD, 14));
+		mnNewMenu.setForeground(new Color(255, 51, 102));
+		mnNewMenu.setBackground(new Color(255, 51, 102));
 		menuBar.add(mnNewMenu);
 
 		JMenuItem mntmNewMenuItem = new JMenuItem("Đăng Xuất");
@@ -196,6 +207,28 @@ public class MainForm extends JFrame {
 			}
 		});
 		mnNewMenu_1.add(mnuQuanLyNhanVien);
+		
+		JSeparator separator_5 = new JSeparator();
+		mnNewMenu_1.add(separator_5);
+		
+		 mnuQuanLyLinhKien = new JMenuItem("Quản Lý Linh Kiện");
+		mnuQuanLyLinhKien.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(mQuanLySanPhamPanel == null) {
+					try {
+						mQuanLySanPhamPanel = new QuanLySanPham();
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					ImageIcon icon = new ImageIcon(
+							getClass().getResource("/icons/gpa-icon.png"));
+					tplMainBoard.addTab("Quản Lý Linh Kiện", icon, mQuanLySanPhamPanel, "Quản Lý Linh Kiện");
+				}
+				tplMainBoard.setSelectedComponent(mQuanLySanPhamPanel);
+			}
+		});
+		mnNewMenu_1.add(mnuQuanLyLinhKien);
 
 		JMenu mnNewMenu_2 = new JMenu("Trợ Giúp");
 		menuBar.add(mnNewMenu_2);
@@ -286,7 +319,8 @@ public class MainForm extends JFrame {
 				 tbrAboutUs.setIcon(new ImageIcon(MainForm.class.getResource("/icons/Actions-help-about-icon-32.png")));
 
 		tplMainBoard = new JTabbedPane(JTabbedPane.TOP);
-		tplMainBoard.setBounds(10, 80, 903, 599);
+		tplMainBoard.setBackground(new Color(255, 102, 102));
+		tplMainBoard.setBounds(10, 80, 1129, 609);
 		contentPane.add(tplMainBoard);
 		
 		JPanel panel = new JPanel();

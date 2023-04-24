@@ -64,4 +64,6 @@ public class LinhKien {
 	public void setDonGia(double donGia) {
 		this.donGia = donGia;
 	}
+	
+	
 }

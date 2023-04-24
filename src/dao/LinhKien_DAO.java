@@ -1,5 +1,6 @@
 package dao;
 
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.sql.rowset.serial.SerialBlob;
 
 import helpers.ConnectDB;
 import model.LinhKien;
@@ -143,7 +146,7 @@ public class LinhKien_DAO {
 		PreparedStatement stm =null;
 		int n=0;
 		try {
-			stm =con.prepareStatement("insert into LinhKien values (?, ?, ?, ?, ?, ?, ?)");
+			stm =con.prepareStatement("insert into LinhKien values (?, ?, ?, ?, ?, ?, ?, ?)");
 			stm.setString(1, lk.getMaLinhKien());
 			stm.setString(2, lk.getTenLinhKien());
 			stm.setInt(3, lk.getSoLuong());
@@ -151,6 +154,7 @@ public class LinhKien_DAO {
 			stm.setString(5, lk.getMaLoai());
 			stm.setString(6, lk.getMaNhaCungCap());
 			stm.setDouble(7, lk.getDonGia());
+		
 			n=stm.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
