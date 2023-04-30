@@ -47,7 +47,6 @@ public class QuanLySanPham extends JPanel {
 	private DefaultTableModel model;
 	private JButton btnThem;
 	private JButton btnDelete;
-	private JButton btnUpdate;
 	private JButton btnSave;
 	
 	private LinhKien linhKien;
@@ -175,11 +174,7 @@ public class QuanLySanPham extends JPanel {
 		btnDelete.setBounds(57, 77, 101, 21);
 		panel_2.add(btnDelete);
 
-		btnUpdate = new JButton("Cập Nhật");
-		btnUpdate.setBounds(57, 122, 101, 21);
-		panel_2.add(btnUpdate);
-
-		btnSave = new JButton("Lưu");
+		btnSave = new JButton("Cập Nhật");
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ktUpdate();
@@ -227,6 +222,21 @@ public class QuanLySanPham extends JPanel {
 		});
 		btnBrowse.setBounds(57, 205, 101, 21);
 		panel_2.add(btnBrowse);
+		
+		JButton btnTim = new JButton("Tìm");
+		btnTim.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (btnTim.getText().equalsIgnoreCase("Tìm")) {
+					btnTim.setText("Hủy");
+					timTheoMaLoai();
+				} else {
+					btnTim.setText("Tìm");
+					loadData();
+				}
+			}
+		});
+		btnTim.setBounds(57, 122, 101, 21);
+		panel_2.add(btnTim);
 
 		String[] s = { "Mã linh kiện", "Tên", "mã nhà cung cấp", "Mã loại", "Số lượng", "Đơn giá nhập",
 				" Địa chỉ hình ảnh" };
@@ -468,16 +478,16 @@ public class QuanLySanPham extends JPanel {
 			return false;
 		}
 		LinhKien_DAO lk_Dao = new LinhKien_DAO();
-//		LinhKien lk = new LinhKien(maLinhKien, tenLinhKien, soLuong, diaChi, maLoai, nhaCungCap, donGia, personalImage);
-//		try {
-//			if (!lk_Dao.capNhatLinhKien(lk)) {
-//				JOptionPane.showMessageDialog(this, "Cập nhật không thành công");
-//				return false;
-//			}
-//		} catch (HeadlessException | SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		LinhKien lk = new LinhKien(maLinhKien, tenLinhKien, soLuong, diaChi, maLoai, nhaCungCap, donGia);
+		try {
+			if (!lk_Dao.capNhatLinhKien(lk)) {
+				JOptionPane.showMessageDialog(this, "Cập nhật không thành công");
+				return false;
+			}
+		} catch (HeadlessException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		loadData();
 		JOptionPane.showMessageDialog(this, "Cập nhật  thành công");
 		return true;

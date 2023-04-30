@@ -40,6 +40,7 @@ public class MainForm extends JFrame {
 	private QuanLyNhanVien mQuanLyNhanVienPanel;
 	private Salary mThongKeLUongPanel;
 	private QuanLySanPham mQuanLySanPhamPanel;
+	private MatHang mMatHangBanChay;
 	
 	private JPanel contentPane;
 	private JTabbedPane tplMainBoard;
@@ -229,6 +230,12 @@ public class MainForm extends JFrame {
 			}
 		});
 		mnNewMenu_1.add(mnuQuanLyLinhKien);
+		
+		JSeparator separator_6 = new JSeparator();
+		mnNewMenu_1.add(separator_6);
+		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("New menu item");
+		mnNewMenu_1.add(mntmNewMenuItem_1);
 
 		JMenu mnNewMenu_2 = new JMenu("Trợ Giúp");
 		menuBar.add(mnNewMenu_2);
@@ -275,6 +282,28 @@ public class MainForm extends JFrame {
 			}
 		});
 		mnNewMenu_3.add(mnuThongKeLuong);
+		
+		JSeparator separator_7 = new JSeparator();
+		mnNewMenu_3.add(separator_7);
+		
+		JMenuItem mnuMatHangBanChay = new JMenuItem("Mặt Hàng Bán Chạy");
+		mnuMatHangBanChay.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(mMatHangBanChay == null) {
+					try {
+						mMatHangBanChay = new MatHang();
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					ImageIcon icon = new ImageIcon(
+							getClass().getResource("/icons/gpa-icon.png"));
+					tplMainBoard.addTab("Thống Kê Mặt Hàng Bán Chạy", icon, mMatHangBanChay, "Thống Kê Mặt Hàng Bán Chạy");
+				}
+				tplMainBoard.setSelectedComponent(mMatHangBanChay);
+			}
+		});
+		mnNewMenu_3.add(mnuMatHangBanChay);
 
 		JToolBar toolBar = new JToolBar();
 		toolBar.setBounds(0, 23, 543, 60);
