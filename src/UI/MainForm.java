@@ -43,6 +43,9 @@ public class MainForm extends JFrame {
 	private MatHang mMatHangBanChay;
 	private QuanLyHoaDon muQuanLyHoaDonPanel;
 	private QuanLyChiTietHoaDon mQuanLyCHiTietHoaDonPanel;
+	private ThongKeHoaDon mThongKeHoaDon;
+	private KhachHangTiemNang mKHTiemNang;
+	
 	
 	private JPanel contentPane;
 	private JTabbedPane tplMainBoard;
@@ -57,6 +60,8 @@ public class MainForm extends JFrame {
 	private JMenuItem mnuQuanLyLinhKien;
 	private JMenuItem mnuQuanLyHoaDon;
 	private JMenuItem mnuQuanLyChiTietHoaDon;
+	private JMenuItem mnuTienTraHoaDon;
+	private JMenuItem mnuKhachHangTiemNang;
 	/**
 	 * Launch the application.
 	 */
@@ -346,6 +351,50 @@ public class MainForm extends JFrame {
 			}
 		});
 		mnNewMenu_3.add(mnuMatHangBanChay);
+		
+		JSeparator separator_9 = new JSeparator();
+		mnNewMenu_3.add(separator_9);
+		
+		 mnuTienTraHoaDon = new JMenuItem("Số Tiền Trả Theo Mỗi Hóa Đơn");
+		mnuTienTraHoaDon.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(mThongKeHoaDon == null) {
+					try {
+						mThongKeHoaDon = new ThongKeHoaDon();
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					ImageIcon icon = new ImageIcon(
+							getClass().getResource("/icons/gpa-icon.png"));
+					tplMainBoard.addTab("Thống Kê Số Tiền Trả HD", icon, mThongKeHoaDon, "Thống Kê Số Tiền Trả HD\",");
+				}
+				tplMainBoard.setSelectedComponent(mThongKeHoaDon);
+			}
+		});
+		mnNewMenu_3.add(mnuTienTraHoaDon);
+		
+		JSeparator separator_10 = new JSeparator();
+		mnNewMenu_3.add(separator_10);
+		
+		 mnuKhachHangTiemNang = new JMenuItem("Khách Hàng Tiềm Năng");
+		 mnuKhachHangTiemNang.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(mKHTiemNang == null) {
+					try {
+						mKHTiemNang = new KhachHangTiemNang();
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					ImageIcon icon = new ImageIcon(
+							getClass().getResource("/icons/gpa-icon.png"));
+					tplMainBoard.addTab("Khách Hàng Tiềm Năng", icon, mKHTiemNang, "Khách Hàng Tiềm Năng\",");
+				}
+				tplMainBoard.setSelectedComponent(mKHTiemNang);
+			}
+		});
+		mnNewMenu_3.add(mnuKhachHangTiemNang);
 
 		JToolBar toolBar = new JToolBar();
 		toolBar.setBounds(0, 23, 543, 60);
