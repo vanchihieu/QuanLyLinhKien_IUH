@@ -42,6 +42,7 @@ public class MainForm extends JFrame {
 	private QuanLySanPham mQuanLySanPhamPanel;
 	private MatHang mMatHangBanChay;
 	private QuanLyHoaDon muQuanLyHoaDonPanel;
+	private QuanLyChiTietHoaDon mQuanLyCHiTietHoaDonPanel;
 	
 	private JPanel contentPane;
 	private JTabbedPane tplMainBoard;
@@ -55,6 +56,7 @@ public class MainForm extends JFrame {
 	private JMenuItem mnuThongKeLuong;
 	private JMenuItem mnuQuanLyLinhKien;
 	private JMenuItem mnuQuanLyHoaDon;
+	private JMenuItem mnuQuanLyChiTietHoaDon;
 	/**
 	 * Launch the application.
 	 */
@@ -254,6 +256,28 @@ public class MainForm extends JFrame {
 			}
 		});
 		mnNewMenu_1.add(mnuQuanLyHoaDon);
+		
+		JSeparator separator_8 = new JSeparator();
+		mnNewMenu_1.add(separator_8);
+		
+		 mnuQuanLyChiTietHoaDon = new JMenuItem("Quản Lý Chi Tiết Hóa Đơn");
+		 mnuQuanLyChiTietHoaDon.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent e) {
+		 		if(mQuanLyCHiTietHoaDonPanel == null) {
+					try {
+						mQuanLyCHiTietHoaDonPanel = new QuanLyChiTietHoaDon();
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					ImageIcon icon = new ImageIcon(
+							getClass().getResource("/icons/gpa-icon.png"));
+					tplMainBoard.addTab("Quản Lý Chi Tiết Hóa Đơn", icon, mQuanLyCHiTietHoaDonPanel, "Quản Lý Chi Tiết Hóa Đơn");
+				}
+				tplMainBoard.setSelectedComponent(mQuanLyCHiTietHoaDonPanel);
+		 	}
+		 });
+		mnNewMenu_1.add(mnuQuanLyChiTietHoaDon);
 
 		JMenu mnNewMenu_2 = new JMenu("Trợ Giúp");
 		menuBar.add(mnNewMenu_2);

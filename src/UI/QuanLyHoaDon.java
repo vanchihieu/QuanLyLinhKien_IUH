@@ -235,7 +235,7 @@ public class QuanLyHoaDon extends JPanel {
 			}
 		});
 		JScrollPane scrollTable = new JScrollPane(tableHoaDon);
-		tableHoaDon.getRowHeight(30);
+		tableHoaDon.getRowHeight(20);
 		add(scrollTable);
 		scrollTable.setBounds(23, 222, 904, 220);
 		
@@ -287,5 +287,6 @@ public class QuanLyHoaDon extends JPanel {
 			// TODO: handle exception
 			e2.printStackTrace();
 		}
+		txtNoiNhan.setText(tableHoaDon.getValueAt(row, 6).toString());
 	}
 }
