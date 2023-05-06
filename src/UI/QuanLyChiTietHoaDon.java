@@ -15,6 +15,8 @@ import dao.ChiTietHoaDon_Dao;
 import helpers.ConnectDB;
 import model.ChiTietHoaDon;
 
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -23,6 +25,8 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.SwingConstants;
+import javax.swing.border.Border;
 
 public class QuanLyChiTietHoaDon extends JPanel {
 	private JTextField txtMaCTHD;
@@ -50,68 +54,90 @@ public class QuanLyChiTietHoaDon extends JPanel {
 		}
 		cthd_dao = new ChiTietHoaDon_Dao();
 		setLayout(null);
+		
+		JLabel backgr = new JLabel(new ImageIcon("D:\\ram.jpg"));
+		backgr.setBounds(0,  0, 1457, 743);
+		add(backgr);
 
 		JLabel lblNewLabel = new JLabel("Chi Tiết Hóa Đơn");
-		lblNewLabel.setForeground(Color.RED);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel.setBounds(244, 10, 176, 37);
-		add(lblNewLabel);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		Border bd = BorderFactory.createLineBorder(Color.DARK_GRAY);
+		lblNewLabel.setBorder(null);
+		lblNewLabel.setForeground(Color.ORANGE);
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 28));
+		lblNewLabel.setBounds(25, 10, 1432, 50);
+		backgr.add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("Mã CTHD:");
-		lblNewLabel_1.setBounds(36, 49, 96, 13);
-		add(lblNewLabel_1);
+		lblNewLabel_1.setBackground(new Color(204, 204, 204));
+		lblNewLabel_1.setForeground(Color.ORANGE);
+		lblNewLabel_1.setBounds(110, 70, 120, 20);
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		backgr.add(lblNewLabel_1);
 
 		txtMaCTHD = new JTextField();
-		txtMaCTHD.setBounds(139, 46, 156, 19);
-		add(txtMaCTHD);
+		txtMaCTHD.setBounds(220, 70, 250, 25);
+		backgr.add(txtMaCTHD);
 		txtMaCTHD.setColumns(10);
 
 		JLabel lblNewLabel_1_1 = new JLabel("Mã Linh Kiện:");
-		lblNewLabel_1_1.setBounds(36, 82, 96, 13);
-		add(lblNewLabel_1_1);
+		lblNewLabel_1_1.setForeground(Color.ORANGE);
+		lblNewLabel_1_1.setBounds(110, 110, 120, 20);
+		lblNewLabel_1_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		backgr.add(lblNewLabel_1_1);
 
 		txtMaLinhKien = new JTextField();
 		txtMaLinhKien.setColumns(10);
-		txtMaLinhKien.setBounds(139, 79, 156, 19);
-		add(txtMaLinhKien);
+		txtMaLinhKien.setBounds(220, 110, 250, 25);
+		backgr.add(txtMaLinhKien);
 
 		JLabel lblNewLabel_1_1_1 = new JLabel("Số Lượng:");
-		lblNewLabel_1_1_1.setBounds(36, 120, 96, 13);
-		add(lblNewLabel_1_1_1);
+		lblNewLabel_1_1_1.setForeground(Color.ORANGE);
+		lblNewLabel_1_1_1.setBounds(110, 150, 120, 20);
+lblNewLabel_1_1_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		backgr.add(lblNewLabel_1_1_1);
 
 		txtSoLuong = new JTextField();
 		txtSoLuong.setColumns(10);
-		txtSoLuong.setBounds(139, 117, 156, 19);
-		add(txtSoLuong);
+		txtSoLuong.setBounds(220, 150, 250, 25);
+		backgr.add(txtSoLuong);
 
 		JLabel lblNewLabel_1_2 = new JLabel("Mã Hóa Đơn:");
-		lblNewLabel_1_2.setBounds(351, 49, 96, 13);
-		add(lblNewLabel_1_2);
+		lblNewLabel_1_2.setForeground(Color.ORANGE);
+		lblNewLabel_1_2.setBounds(800, 70, 120, 20);
+		lblNewLabel_1_2.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		backgr.add(lblNewLabel_1_2);
 
 		txtMaHD = new JTextField();
 		txtMaHD.setColumns(10);
-		txtMaHD.setBounds(446, 46, 156, 19);
-		add(txtMaHD);
+		txtMaHD.setBounds(900, 70, 250, 25);
+		backgr.add(txtMaHD);
 
 		JLabel lblNewLabel_1_1_2 = new JLabel("Đơn Giá:");
-		lblNewLabel_1_1_2.setBounds(351, 82, 96, 13);
-		add(lblNewLabel_1_1_2);
+		lblNewLabel_1_1_2.setForeground(Color.ORANGE);
+		lblNewLabel_1_1_2.setBounds(800, 110, 120, 20);
+lblNewLabel_1_1_2.setFont(new Font("Times New Roman", Font.BOLD, 18));
+backgr.add(lblNewLabel_1_1_2);
 
 		txtDonGia = new JTextField();
 		txtDonGia.setColumns(10);
-		txtDonGia.setBounds(446, 79, 156, 19);
-		add(txtDonGia);
+		txtDonGia.setBounds(900, 110, 250, 25);
+		backgr.add(txtDonGia);
 
 		JLabel lblNewLabel_1_1_2_1 = new JLabel("Thành Tiền:");
-		lblNewLabel_1_1_2_1.setBounds(351, 120, 96, 13);
-		add(lblNewLabel_1_1_2_1);
+		lblNewLabel_1_1_2_1.setForeground(Color.ORANGE);
+		lblNewLabel_1_1_2_1.setBounds(800, 150, 120, 20);
+		lblNewLabel_1_1_2_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		backgr.add(lblNewLabel_1_1_2_1);
 
 		txtThanhTien = new JTextField();
 		txtThanhTien.setColumns(10);
-		txtThanhTien.setBounds(446, 117, 156, 19);
-		add(txtThanhTien);
+		txtThanhTien.setBounds(900, 150, 250, 25);
+		backgr.add(txtThanhTien);
 
 		JButton btnThem = new JButton("Thêm");
+		btnThem.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnThem.setBackground(Color.ORANGE);
 		btnThem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String maCTHD = txtMaCTHD.getText().trim();
@@ -141,15 +167,17 @@ public class QuanLyChiTietHoaDon extends JPanel {
 				}
 			}
 		});
-		btnThem.setBounds(36, 158, 85, 21);
-		add(btnThem);
+		btnThem.setBounds(380, 200, 120,50);
+		backgr.add(btnThem);
 
 		JButton btnXoa = new JButton("Xóa");
+		btnXoa.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnXoa.setBackground(Color.ORANGE);
 		btnXoa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int rowCountSelect = tableCTHD.getSelectedRow();
 				if (rowCountSelect != -1) {
-					int isYes = JOptionPane.showConfirmDialog(null, "Bạn có chắc muốn xóa");
+int isYes = JOptionPane.showConfirmDialog(null, "Bạn có chắc muốn xóa");
 					if (isYes == 0) {
 						// do remove record
 						String maCTHD = tableCTHD.getValueAt(rowCountSelect, 0).toString();
@@ -168,10 +196,12 @@ public class QuanLyChiTietHoaDon extends JPanel {
 				}
 			}
 		});
-		btnXoa.setBounds(165, 158, 85, 21);
-		add(btnXoa);
+		btnXoa.setBounds(580, 200,120,50);
+		backgr.add(btnXoa);
 
 		JButton btnXaTrng = new JButton("Xóa Trắng");
+		btnXaTrng.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnXaTrng.setBackground(Color.ORANGE);
 		btnXaTrng.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				txtMaCTHD.setText("");
@@ -179,13 +209,15 @@ public class QuanLyChiTietHoaDon extends JPanel {
 				txtMaLinhKien.setText("");
 				txtSoLuong.setText("");
 				txtDonGia.setText("");
-				txtThanhTien.setText("");
+txtThanhTien.setText("");
 			}
 		});
-		btnXaTrng.setBounds(295, 158, 105, 21);
-		add(btnXaTrng);
+		btnXaTrng.setBounds(800, 200,120,50);
+		backgr.add(btnXaTrng);
 
 		JButton btnTimKiem = new JButton("Tìm Kiếm");
+		btnTimKiem.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnTimKiem.setBackground(Color.ORANGE);
 		btnTimKiem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int flag = 0;
@@ -208,8 +240,8 @@ public class QuanLyChiTietHoaDon extends JPanel {
 				}
 			}
 		});
-		btnTimKiem.setBounds(446, 158, 105, 21);
-		add(btnTimKiem);
+		btnTimKiem.setBounds(1000, 200, 120,50);
+		backgr.add(btnTimKiem);
 
 		String fieldName[] = { "Mã CTHD", "Mã Hóa Đơn", "Mã Linh Kiện", "Đơn Gía", "Số Lượng", "Thành Tiền" };
 		modalTable = new DefaultTableModel(fieldName, 0);
@@ -229,14 +261,14 @@ public class QuanLyChiTietHoaDon extends JPanel {
 		JScrollPane scrollTable = new JScrollPane(tableCTHD);
 	
 		tableCTHD.getRowHeight(20);
-		add(scrollTable);
-		scrollTable.setBounds(36, 209, 566, 152);
+		backgr.add(scrollTable);
+		scrollTable.setBounds(100, 270, 1300, 350);
 		
 		loadDataToTable();
 	}
 
 	public void sendDataToTxt(int row) {
-		txtMaCTHD.setText(tableCTHD.getValueAt(row, 0).toString());
+txtMaCTHD.setText(tableCTHD.getValueAt(row, 0).toString());
 		txtMaHD.setText(tableCTHD.getValueAt(row, 1).toString());
 		txtMaLinhKien.setText(tableCTHD.getValueAt(row, 2).toString());
 		txtDonGia.setText(tableCTHD.getValueAt(row, 3).toString());

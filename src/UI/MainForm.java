@@ -160,20 +160,20 @@ public class MainForm extends JFrame {
 		JSeparator separator_1 = new JSeparator();
 		mnNewMenu_1.add(separator_1);
 
-		 mnuManageGPA = new JMenuItem("Quản Lý ĐIểm");
-		mnuManageGPA.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(mGPAPanel == null) {
-					mGPAPanel = new GPAManagementPanel();
-					ImageIcon icon = new ImageIcon(
-							getClass().getResource("/icons/gpa-icon.png"));
-					tplMainBoard.addTab("Quản Lý Điểm", icon, mGPAPanel, "Quản Lý Điểm");
-				}
-				tplMainBoard.setSelectedComponent(mGPAPanel);
-			}
-		});
-		mnuManageGPA.setIcon(new ImageIcon(MainForm.class.getResource("/icons/gpa-icon.png")));
-		mnNewMenu_1.add(mnuManageGPA);
+//		 mnuManageGPA = new JMenuItem("Quản Lý ĐIểm");
+//		mnuManageGPA.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				if(mGPAPanel == null) {
+//					mGPAPanel = new GPAManagementPanel();
+//					ImageIcon icon = new ImageIcon(
+//							getClass().getResource("/icons/gpa-icon.png"));
+//					tplMainBoard.addTab("Quản Lý Điểm", icon, mGPAPanel, "Quản Lý Điểm");
+//				}
+//				tplMainBoard.setSelectedComponent(mGPAPanel);
+//			}
+//		});
+//		mnuManageGPA.setIcon(new ImageIcon(MainForm.class.getResource("/icons/gpa-icon.png")));
+//		mnNewMenu_1.add(mnuManageGPA);
 		
 		JSeparator separator_3 = new JSeparator();
 		mnNewMenu_1.add(separator_3);
@@ -222,6 +222,7 @@ public class MainForm extends JFrame {
 		mnNewMenu_1.add(separator_5);
 		
 		 mnuQuanLyLinhKien = new JMenuItem("Quản Lý Linh Kiện");
+		 mnuQuanLyLinhKien.setIcon(new ImageIcon("D:\\Code\\java\\demo_HSK\\App_QLLK\\src\\icons\\Beach-House.16.png"));
 		mnuQuanLyLinhKien.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(mQuanLySanPhamPanel == null) {
@@ -244,6 +245,7 @@ public class MainForm extends JFrame {
 		mnNewMenu_1.add(separator_6);
 		
 		 mnuQuanLyHoaDon = new JMenuItem("Quản Lý Hóa Đơn");
+		 mnuQuanLyHoaDon.setIcon(new ImageIcon("D:\\Code\\java\\demo_HSK\\App_QLLK\\src\\icons\\Pirate-Flag.16.png"));
 		 mnuQuanLyHoaDon.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(muQuanLyHoaDonPanel == null) {
@@ -266,6 +268,7 @@ public class MainForm extends JFrame {
 		mnNewMenu_1.add(separator_8);
 		
 		 mnuQuanLyChiTietHoaDon = new JMenuItem("Quản Lý Chi Tiết Hóa Đơn");
+		 mnuQuanLyChiTietHoaDon.setIcon(new ImageIcon("D:\\Code\\java\\demo_HSK\\App_QLLK\\src\\icons\\Coconut.16.png"));
 		 mnuQuanLyChiTietHoaDon.addActionListener(new ActionListener() {
 		 	public void actionPerformed(ActionEvent e) {
 		 		if(mQuanLyCHiTietHoaDonPanel == null) {
@@ -334,6 +337,7 @@ public class MainForm extends JFrame {
 		mnNewMenu_3.add(separator_7);
 		
 		JMenuItem mnuMatHangBanChay = new JMenuItem("Mặt Hàng Bán Chạy");
+		mnuMatHangBanChay.setIcon(new ImageIcon("D:\\Code\\java\\demo_HSK\\App_QLLK\\src\\icons\\Beach-House.16.png"));
 		mnuMatHangBanChay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(mMatHangBanChay == null) {
@@ -356,6 +360,7 @@ public class MainForm extends JFrame {
 		mnNewMenu_3.add(separator_9);
 		
 		 mnuTienTraHoaDon = new JMenuItem("Số Tiền Trả Theo Mỗi Hóa Đơn");
+		 mnuTienTraHoaDon.setIcon(new ImageIcon("D:\\Code\\java\\demo_HSK\\App_QLLK\\src\\icons\\Pirate-Flag.16.png"));
 		mnuTienTraHoaDon.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(mThongKeHoaDon == null) {
@@ -378,6 +383,7 @@ public class MainForm extends JFrame {
 		mnNewMenu_3.add(separator_10);
 		
 		 mnuKhachHangTiemNang = new JMenuItem("Khách Hàng Tiềm Năng");
+		 mnuKhachHangTiemNang.setIcon(new ImageIcon("D:\\Code\\java\\demo_HSK\\App_QLLK\\src\\icons\\Coconut.16.png"));
 		 mnuKhachHangTiemNang.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(mKHTiemNang == null) {
@@ -440,7 +446,7 @@ public class MainForm extends JFrame {
 
 		tplMainBoard = new JTabbedPane(JTabbedPane.TOP);
 		tplMainBoard.setBackground(new Color(255, 102, 102));
-		tplMainBoard.setBounds(10, 80, 1129, 609);
+		tplMainBoard.setBounds(15, 90, 1510, 690);
 		contentPane.add(tplMainBoard);
 		
 		JPanel panel = new JPanel();
