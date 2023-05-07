@@ -66,16 +66,22 @@ public class StudentManagementPanel extends JPanel {
 		JSeparator separator = new JSeparator();
 
 		JLabel lblNewLabel_1 = new JLabel("Mã Khách Hàng");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		JLabel lblNewLabel_1_1 = new JLabel("Họ Tên");
+		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		JLabel lblNewLabel_1_1_1 = new JLabel("Email");
+		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		JLabel lblNewLabel_1_1_1_1 = new JLabel("Số Điện Thoại");
+		lblNewLabel_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		JLabel lblNewLabel_1_1_1_1_1 = new JLabel("Địa Chỉ");
+		lblNewLabel_1_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		JLabel lblNewLabel_1_1_1_1_1_1 = new JLabel("Giới Tính");
+		lblNewLabel_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		txtStudentId = new JTextField();
 		txtStudentId.setColumns(10);
@@ -92,13 +98,16 @@ public class StudentManagementPanel extends JPanel {
 		ButtonGroup buttonGroup = new ButtonGroup();
 		
 		JRadioButton rdbMale = new JRadioButton("Nam");
+		rdbMale.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
 		JRadioButton rdbFemale = new JRadioButton("Nữ");
+		rdbFemale.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		buttonGroup.add(rdbFemale);
 		buttonGroup.add(rdbMale);
 		JTextArea txaAddress = new JTextArea();
 
 		JButton btnNew = new JButton("Tạo Mới");
+		btnNew.setBackground(Color.ORANGE);
 		btnNew.setIcon(new ImageIcon(StudentManagementPanel.class.getResource("/icons/new-icon-16.png")));
 		btnNew.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -116,6 +125,7 @@ public class StudentManagementPanel extends JPanel {
 		});
 
 		JButton btnDelete = new JButton("Xóa");
+		btnDelete.setBackground(Color.ORANGE);
 		btnDelete.setIcon(
 				new ImageIcon(StudentManagementPanel.class.getResource("/icons/Actions-edit-delete-icon-16.png")));
 		btnDelete.addActionListener(new ActionListener() {
@@ -148,6 +158,7 @@ public class StudentManagementPanel extends JPanel {
 		});
 
 		JButton btnSave = new JButton("Lưu");
+		btnSave.setBackground(Color.ORANGE);
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				StringBuilder sb = new StringBuilder();
@@ -185,6 +196,7 @@ public class StudentManagementPanel extends JPanel {
 		btnSave.setIcon(new ImageIcon(StudentManagementPanel.class.getResource("/icons/Save-icon.png")));
 
 		JButton btnUpdate = new JButton("Cập nhật");
+		btnUpdate.setBackground(Color.ORANGE);
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				StringBuilder sb = new StringBuilder();
@@ -277,129 +289,116 @@ public class StudentManagementPanel extends JPanel {
 		JPanel panel_1 = new JPanel();
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.TRAILING)
+			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(30)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_1_1, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_1_1_1, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_1_1_1_1, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_1_1_1_1_1_1, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_1_1_1_1_1, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
-							.addGap(16)
+							.addGap(20)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(9)
-									.addComponent(txtStudentId, GroupLayout.PREFERRED_SIZE, 199, GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(9)
-									.addComponent(txtName, GroupLayout.PREFERRED_SIZE, 199, GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(9)
-									.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, 199, GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(9)
-									.addComponent(txtPhone, GroupLayout.PREFERRED_SIZE, 199, GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(10)
-									.addComponent(rdbMale, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(rdbFemale, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(9)
-									.addComponent(txaAddress, GroupLayout.PREFERRED_SIZE, 199, GroupLayout.PREFERRED_SIZE)))
-							.addGap(28)
-							.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE))
+									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+										.addGroup(groupLayout.createSequentialGroup()
+											.addGap(30)
+											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+												.addComponent(lblNewLabel_1_1, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
+												.addComponent(lblNewLabel_1_1_1, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
+												.addComponent(lblNewLabel_1_1_1_1, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
+												.addComponent(lblNewLabel_1_1_1_1_1_1, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
+												.addComponent(lblNewLabel_1_1_1_1_1, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+												.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE))
+											.addGap(29)
+											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+												.addGroup(groupLayout.createSequentialGroup()
+													.addComponent(rdbMale, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE)
+													.addGap(9)
+													.addComponent(rdbFemale, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE))
+												.addComponent(txtName)
+												.addComponent(txtStudentId, GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+												.addComponent(txtEmail)
+												.addComponent(txtPhone)
+												.addComponent(txaAddress, GroupLayout.PREFERRED_SIZE, 227, GroupLayout.PREFERRED_SIZE)))
+										.addGroup(groupLayout.createSequentialGroup()
+											.addGap(59)
+											.addComponent(btnNew, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addComponent(separator_2, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addComponent(btnSave, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
+											.addGap(48)
+											.addComponent(btnDelete, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
+											.addGap(26)
+											.addComponent(btnUpdate, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)))
+									.addGap(18)
+									.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE))
+								.addComponent(separator_1, GroupLayout.PREFERRED_SIZE, 495, GroupLayout.PREFERRED_SIZE)
+								.addComponent(tblStudents, GroupLayout.PREFERRED_SIZE, 672, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addContainerGap()
-									.addComponent(btnNew, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(separator_2, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(btnSave, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(btnDelete, GroupLayout.PREFERRED_SIZE, 87, GroupLayout.PREFERRED_SIZE)
-									.addGap(10)
-									.addComponent(btnUpdate))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addContainerGap()
-									.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 190, GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(20)
-									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addComponent(tblStudents, GroupLayout.PREFERRED_SIZE, 615, GroupLayout.PREFERRED_SIZE)
-										.addComponent(separator_1, GroupLayout.PREFERRED_SIZE, 495, GroupLayout.PREFERRED_SIZE))))
-							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addContainerGap(105, Short.MAX_VALUE)
+							.addContainerGap(249, Short.MAX_VALUE)
 							.addComponent(separator, GroupLayout.PREFERRED_SIZE, 520, GroupLayout.PREFERRED_SIZE)))
-					.addGap(148))
+					.addGap(227))
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(261)
+					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 190, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(545, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
+					.addGap(14)
 					.addComponent(lblNewLabel)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(separator, GroupLayout.PREFERRED_SIZE, 2, GroupLayout.PREFERRED_SIZE)
-					.addGap(7)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(3)
-							.addComponent(lblNewLabel_1)
-							.addGap(12)
-							.addComponent(lblNewLabel_1_1)
-							.addGap(12)
-							.addComponent(lblNewLabel_1_1_1, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
-							.addGap(10)
-							.addComponent(lblNewLabel_1_1_1_1)
-							.addGap(17)
-							.addComponent(lblNewLabel_1_1_1_1_1_1)
-							.addGap(32)
-							.addComponent(lblNewLabel_1_1_1_1_1))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(txtStudentId, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(6)
-							.addComponent(txtName, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(6)
-							.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(6)
-							.addComponent(txtPhone, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(10)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(rdbFemale)
-								.addComponent(rdbMale))
-							.addGap(6)
-							.addComponent(txaAddress, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(22)
-							.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 197, GroupLayout.PREFERRED_SIZE)))
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(10)
+							.addGap(7)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addGap(3)
+									.addComponent(lblNewLabel_1)
+									.addGap(12)
+									.addComponent(lblNewLabel_1_1)
+									.addGap(12)
+									.addComponent(lblNewLabel_1_1_1, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
+									.addGap(10)
+									.addComponent(lblNewLabel_1_1_1_1)
+									.addGap(17)
+									.addComponent(lblNewLabel_1_1_1_1_1_1)
+									.addGap(32)
+									.addComponent(lblNewLabel_1_1_1_1_1))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(txtStudentId, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(txtName, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(txtPhone, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(rdbMale)
+										.addComponent(rdbFemale))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(txaAddress, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE)))
+							.addGap(14)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(separator_2, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
 								.addGroup(groupLayout.createSequentialGroup()
 									.addGap(13)
 									.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-										.addComponent(btnDelete, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-										.addComponent(btnSave, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(13)
-									.addComponent(btnUpdate, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))))
+										.addComponent(btnUpdate, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+										.addComponent(btnDelete, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+										.addComponent(btnSave, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+										.addComponent(btnNew, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE))))
+							.addGap(3)
+							.addComponent(separator_1, GroupLayout.PREFERRED_SIZE, 7, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(23)
-							.addComponent(btnNew, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)))
-					.addGap(3)
-					.addComponent(separator_1, GroupLayout.PREFERRED_SIZE, 7, GroupLayout.PREFERRED_SIZE)
+							.addGap(18)
+							.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 197, GroupLayout.PREFERRED_SIZE)))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(tblStudents, GroupLayout.PREFERRED_SIZE, 213, GroupLayout.PREFERRED_SIZE)
-					.addGap(70))
+					.addContainerGap(72, Short.MAX_VALUE))
 		);
 		panel_1.setLayout(null);
 
@@ -410,6 +409,8 @@ public class StudentManagementPanel extends JPanel {
 		panel_1.add(lblImage);
 
 		JButton btnBrowse = new JButton("Mở hình");
+		btnBrowse.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnBrowse.setBackground(Color.ORANGE);
 		btnBrowse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser chooser = new JFileChooser();
@@ -447,7 +448,7 @@ public class StudentManagementPanel extends JPanel {
 			}
 		});
 		btnBrowse.setIcon(new ImageIcon(StudentManagementPanel.class.getResource("/icons/open-file-icon-16.png")));
-		btnBrowse.setBounds(36, 166, 106, 21);
+		btnBrowse.setBounds(30, 154, 112, 33);
 		panel_1.add(btnBrowse);
 		setLayout(groupLayout);
 

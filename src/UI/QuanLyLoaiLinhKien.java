@@ -66,30 +66,36 @@ public class QuanLyLoaiLinhKien extends JPanel {
 		setLayout(null);
 
 		JLabel lblQunLLoi = new JLabel("Quản Lý Loại Linh Kiện");
-		lblQunLLoi.setBounds(22, 10, 234, 21);
+		lblQunLLoi.setBounds(259, 10, 234, 21);
 		lblQunLLoi.setForeground(new Color(255, 0, 128));
 		lblQunLLoi.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		add(lblQunLLoi);
 
-		JLabel lblNewLabel = new JLabel("Mã loại linh kiện");
-		lblNewLabel.setBounds(10, 49, 96, 13);
+		JLabel lblNewLabel = new JLabel("Mã loại linh kiện:");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel.setBounds(10, 49, 116, 13);
 		add(lblNewLabel);
 
 		txtMa = new JTextField();
-		txtMa.setBounds(103, 46, 211, 19);
+		txtMa.setFont(new Font("Tahoma", Font.BOLD, 12));
+		txtMa.setBounds(125, 47, 234, 19);
 		add(txtMa);
 		txtMa.setColumns(10);
 
 		JLabel lblTnLoiLinh = new JLabel("Tên loại linh kiện");
-		lblTnLoiLinh.setBounds(356, 49, 124, 13);
+		lblTnLoiLinh.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblTnLoiLinh.setBounds(384, 49, 116, 13);
 		add(lblTnLoiLinh);
 
 		txtTen = new JTextField();
+		txtTen.setFont(new Font("Tahoma", Font.BOLD, 12));
 		txtTen.setColumns(10);
-		txtTen.setBounds(461, 46, 220, 19);
+		txtTen.setBounds(505, 47, 220, 19);
 		add(txtTen);
 
 		btnTim = new JButton("Tìm");
+		btnTim.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnTim.setBackground(Color.ORANGE);
 		btnTim.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int flag = 0;
@@ -110,10 +116,12 @@ public class QuanLyLoaiLinhKien extends JPanel {
 				}
 			}
 		});
-		btnTim.setBounds(10, 82, 85, 21);
+		btnTim.setBounds(10, 82, 96, 39);
 		add(btnTim);
 
 		btnThem = new JButton("Thêm");
+		btnThem.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnThem.setBackground(Color.ORANGE);
 		btnThem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btnThem.getText().equalsIgnoreCase("Thêm")) {
@@ -133,14 +141,18 @@ public class QuanLyLoaiLinhKien extends JPanel {
 				}
 			}
 		});
-		btnThem.setBounds(113, 82, 85, 21);
+		btnThem.setBounds(113, 82, 91, 39);
 		add(btnThem);
 
 		btnThoat = new JButton("Thoát");
-		btnThoat.setBounds(640, 82, 85, 21);
+		btnThoat.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnThoat.setBackground(Color.ORANGE);
+		btnThoat.setBounds(640, 82, 85, 39);
 		add(btnThoat);
 
 		btnLuu = new JButton("Lưu ");
+		btnLuu.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnLuu.setBackground(Color.ORANGE);
 		btnLuu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btnThem.getText().equalsIgnoreCase("Hủy")) {
@@ -183,17 +195,19 @@ public class QuanLyLoaiLinhKien extends JPanel {
 				}
 			}
 		});
-		btnLuu.setBounds(544, 82, 85, 21);
+		btnLuu.setBounds(544, 82, 85, 39);
 		add(btnLuu);
 
 		btnXoaTrang = new JButton("Xóa Trắng");
+		btnXoaTrang.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnXoaTrang.setBackground(Color.ORANGE);
 		btnXoaTrang.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				txtMa.setText("");
 				txtTen.setText("");
 			}
 		});
-		btnXoaTrang.setBounds(428, 82, 106, 21);
+		btnXoaTrang.setBounds(428, 82, 103, 39);
 		add(btnXoaTrang);
 
 		String[] header = { "Mã Loại Linh Kiện ", "Tên Loại Linh Kiện" };
@@ -216,6 +230,8 @@ public class QuanLyLoaiLinhKien extends JPanel {
 		sp.setBounds(10, 161, 715, 185);
 
 		btnSua = new JButton("Sửa");
+		btnSua.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnSua.setBackground(Color.ORANGE);
 		btnSua.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btnSua.getText().equalsIgnoreCase("Sửa")) {
@@ -237,10 +253,12 @@ public class QuanLyLoaiLinhKien extends JPanel {
 				loadBangDiem();
 			}
 		});
-		btnSua.setBounds(214, 82, 85, 21);
+		btnSua.setBounds(214, 82, 95, 39);
 		add(btnSua);
 
 		btnXoa = new JButton("Xóa");
+		btnXoa.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnXoa.setBackground(Color.ORANGE);
 		btnXoa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LinhKien_DAO lkDao = new LinhKien_DAO();
@@ -267,7 +285,7 @@ public class QuanLyLoaiLinhKien extends JPanel {
 				}
 			}
 		});
-		btnXoa.setBounds(319, 82, 85, 21);
+		btnXoa.setBounds(319, 82, 91, 39);
 		add(btnXoa);
 
 		llk_dao = new LoailinhKien_DAO();

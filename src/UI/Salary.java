@@ -29,8 +29,8 @@ public class Salary extends JPanel {
 		JLabel lblNewLabel = new JLabel("Thống Kê Lương Nhân Viên");
 		lblNewLabel.setForeground(new Color(255, 0, 0));
 		lblNewLabel.setBackground(new Color(128, 0, 255));
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblNewLabel.setBounds(36, 10, 198, 23);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblNewLabel.setBounds(107, 10, 287, 23);
 		add(lblNewLabel);
 
 		String[] header = { "Mã NV ", "Họ NV", "Tên NV", "Phái", "Phòng Ban", "Lương" };

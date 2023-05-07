@@ -33,6 +33,8 @@ import java.awt.event.ActionListener;
 import java.awt.HeadlessException;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Color;
 
 public class QuanLySanPham extends JPanel {
 	private MainForm parentForm;
@@ -65,7 +67,9 @@ public class QuanLySanPham extends JPanel {
 		setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("Sản Phẩm");
-		lblNewLabel.setBounds(416, 10, 85, 13);
+		lblNewLabel.setForeground(Color.RED);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblNewLabel.setBounds(441, 10, 135, 25);
 		add(lblNewLabel);
 
 		JPanel panel = new JPanel();
@@ -83,64 +87,78 @@ public class QuanLySanPham extends JPanel {
 		panel_1.setLayout(null);
 
 		JLabel lblNewLabel_1 = new JLabel("Mã Linh Kiện:");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lblNewLabel_1.setBounds(10, 10, 83, 26);
 		panel_1.add(lblNewLabel_1);
 
 		txtMa = new JTextField();
+		txtMa.setFont(new Font("Tahoma", Font.BOLD, 12));
 		txtMa.setBounds(130, 14, 294, 19);
 		panel_1.add(txtMa);
 		txtMa.setColumns(10);
 
 		JLabel lblNewLabel_1_1 = new JLabel("Tên Linh Kiện:");
-		lblNewLabel_1_1.setBounds(10, 46, 83, 26);
+		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_1_1.setBounds(10, 46, 110, 26);
 		panel_1.add(lblNewLabel_1_1);
 
 		txtTen = new JTextField();
+		txtTen.setFont(new Font("Tahoma", Font.BOLD, 12));
 		txtTen.setColumns(10);
 		txtTen.setBounds(130, 50, 294, 19);
 		panel_1.add(txtTen);
 
 		JLabel lblNewLabel_1_1_1 = new JLabel("Mã Nhà Cung Cấp:");
+		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lblNewLabel_1_1_1.setBounds(10, 79, 113, 26);
 		panel_1.add(lblNewLabel_1_1_1);
 
 		txtMaNhaCCC = new JTextField();
+		txtMaNhaCCC.setFont(new Font("Tahoma", Font.BOLD, 12));
 		txtMaNhaCCC.setColumns(10);
 		txtMaNhaCCC.setBounds(130, 79, 294, 19);
 		panel_1.add(txtMaNhaCCC);
 
 		JLabel lblNewLabel_1_1_1_1 = new JLabel("Mã Loại:");
+		lblNewLabel_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lblNewLabel_1_1_1_1.setBounds(10, 111, 113, 26);
 		panel_1.add(lblNewLabel_1_1_1_1);
 
 		txtmaLoai = new JTextField();
+		txtmaLoai.setFont(new Font("Tahoma", Font.BOLD, 12));
 		txtmaLoai.setColumns(10);
 		txtmaLoai.setBounds(130, 115, 294, 19);
 		panel_1.add(txtmaLoai);
 
 		JLabel lblNewLabel_1_1_1_1_1 = new JLabel("Số Lượng:");
+		lblNewLabel_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lblNewLabel_1_1_1_1_1.setBounds(10, 144, 113, 26);
 		panel_1.add(lblNewLabel_1_1_1_1_1);
 
 		txtSoLuong = new JTextField();
+		txtSoLuong.setFont(new Font("Tahoma", Font.BOLD, 12));
 		txtSoLuong.setColumns(10);
 		txtSoLuong.setBounds(130, 148, 294, 19);
 		panel_1.add(txtSoLuong);
 
 		JLabel lblNewLabel_1_1_1_1_1_1 = new JLabel("Đơn Giá:");
+		lblNewLabel_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lblNewLabel_1_1_1_1_1_1.setBounds(10, 175, 113, 26);
 		panel_1.add(lblNewLabel_1_1_1_1_1_1);
 
 		txtDonGia = new JTextField();
+		txtDonGia.setFont(new Font("Tahoma", Font.BOLD, 12));
 		txtDonGia.setColumns(10);
 		txtDonGia.setBounds(130, 180, 294, 19);
 		panel_1.add(txtDonGia);
 
 		JLabel lblNewLabel_1_1_1_1_1_1_1 = new JLabel("Địa Chỉ Hình Ảnh:");
+		lblNewLabel_1_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		lblNewLabel_1_1_1_1_1_1_1.setBounds(10, 211, 113, 26);
 		panel_1.add(lblNewLabel_1_1_1_1_1_1_1);
 
 		txtDiaChi = new JTextField();
+		txtDiaChi.setFont(new Font("Tahoma", Font.BOLD, 12));
 		txtDiaChi.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -162,28 +180,36 @@ public class QuanLySanPham extends JPanel {
 		panel_2.setLayout(null);
 
 		btnThem = new JButton("Thêm");
+		btnThem.setBackground(Color.ORANGE);
+		btnThem.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnThem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ktInput();
 			}
 		});
-		btnThem.setBounds(57, 32, 101, 21);
+		btnThem.setBounds(57, 20, 101, 33);
 		panel_2.add(btnThem);
 
 		btnDelete = new JButton("Xóa");
-		btnDelete.setBounds(57, 77, 101, 21);
+		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnDelete.setBackground(Color.ORANGE);
+		btnDelete.setBounds(57, 63, 101, 35);
 		panel_2.add(btnDelete);
 
 		btnSave = new JButton("Cập Nhật");
+		btnSave.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnSave.setBackground(Color.ORANGE);
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ktUpdate();
 			}
 		});
-		btnSave.setBounds(57, 168, 101, 21);
+		btnSave.setBounds(57, 153, 101, 36);
 		panel_2.add(btnSave);
 		
 		btnBrowse = new JButton("Mở Hình");
+		btnBrowse.setBackground(Color.ORANGE);
+		btnBrowse.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnBrowse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser chooser = new JFileChooser();
@@ -220,10 +246,12 @@ public class QuanLySanPham extends JPanel {
 				}
 			}
 		});
-		btnBrowse.setBounds(57, 205, 101, 21);
+		btnBrowse.setBounds(57, 199, 101, 39);
 		panel_2.add(btnBrowse);
 		
 		JButton btnTim = new JButton("Tìm");
+		btnTim.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnTim.setBackground(Color.ORANGE);
 		btnTim.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btnTim.getText().equalsIgnoreCase("Tìm")) {
@@ -235,7 +263,7 @@ public class QuanLySanPham extends JPanel {
 				}
 			}
 		});
-		btnTim.setBounds(57, 122, 101, 21);
+		btnTim.setBounds(57, 108, 101, 35);
 		panel_2.add(btnTim);
 
 		String[] s = { "Mã linh kiện", "Tên", "mã nhà cung cấp", "Mã loại", "Số lượng", "Đơn giá nhập",
@@ -473,10 +501,10 @@ public class QuanLySanPham extends JPanel {
 			return false;
 		}
 		String diaChi = this.txtDiaChi.getText().trim();
-		if (diaChi.equals("")) {
-			JOptionPane.showMessageDialog(this, "Bạn chưa chọn ảnh để lưu");
-			return false;
-		}
+//		if (diaChi.equals("")) {
+//			JOptionPane.showMessageDialog(this, "Bạn chưa chọn ảnh để lưu");
+//			return false;
+//		}
 		LinhKien_DAO lk_Dao = new LinhKien_DAO();
 		LinhKien lk = new LinhKien(maLinhKien, tenLinhKien, soLuong, diaChi, maLoai, nhaCungCap, donGia);
 		try {

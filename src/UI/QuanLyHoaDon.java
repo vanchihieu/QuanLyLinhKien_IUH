@@ -56,14 +56,16 @@ public class QuanLyHoaDon extends JPanel {
 		JLabel lblNewLabel = new JLabel("Quản Lý Hóa Đơn");
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel.setBounds(213, 10, 190, 37);
+		lblNewLabel.setBounds(407, 0, 190, 37);
 		add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Mã Hóa Đơn:");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1.setBounds(43, 52, 109, 13);
 		add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Mã Nhân Viên:");
+		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_1.setBounds(43, 85, 109, 13);
 		add(lblNewLabel_1_1);
 		
@@ -78,6 +80,7 @@ public class QuanLyHoaDon extends JPanel {
 		add(txtMaNV);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Ngày Giao Hàng:");
+		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_1_1.setBounds(43, 122, 109, 13);
 		add(lblNewLabel_1_1_1);
 		
@@ -87,6 +90,7 @@ public class QuanLyHoaDon extends JPanel {
 		add(dateNgayGiaoHang);
 		
 		JLabel lblNewLabel_1_1_1_1 = new JLabel("Nơi Nhận:");
+		lblNewLabel_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_1_1_1.setBounds(43, 158, 77, 13);
 		add(lblNewLabel_1_1_1_1);
 		
@@ -96,6 +100,7 @@ public class QuanLyHoaDon extends JPanel {
 		add(txtNoiNhan);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Mã Khách Hàng:");
+		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_2.setBounds(529, 52, 117, 13);
 		add(lblNewLabel_1_2);
 		
@@ -105,6 +110,7 @@ public class QuanLyHoaDon extends JPanel {
 		add(txtMaKH);
 		
 		JLabel lblNewLabel_1_2_1 = new JLabel("Ngày Đặt Hàng");
+		lblNewLabel_1_2_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_2_1.setBounds(529, 85, 83, 13);
 		add(lblNewLabel_1_2_1);
 		dateNgayDatHang = new JDateChooser();
@@ -113,6 +119,7 @@ public class QuanLyHoaDon extends JPanel {
 		add(dateNgayDatHang);
 		
 		JLabel lblNewLabel_1_2_1_1 = new JLabel("Ngày Chuyển");
+		lblNewLabel_1_2_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_2_1_1.setBounds(530, 117, 85, 13);
 		add(lblNewLabel_1_2_1_1);
 		
@@ -122,6 +129,8 @@ public class QuanLyHoaDon extends JPanel {
 		add(dateNgayChuyen);
 		
 		JButton btnThem = new JButton("Thêm");
+		btnThem.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnThem.setBackground(Color.ORANGE);
 		btnThem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String maHoaDon = txtMaHD.getText().trim();
@@ -149,10 +158,12 @@ public class QuanLyHoaDon extends JPanel {
 				}
 			}
 		});
-		btnThem.setBounds(56, 191, 85, 21);
+		btnThem.setBounds(194, 191, 96, 38);
 		add(btnThem);
 		
 		JButton btnXoa = new JButton("Xóa");
+		btnXoa.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnXoa.setBackground(Color.ORANGE);
 		btnXoa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int rowSeleted = tableHoaDon.getSelectedRow();
@@ -175,10 +186,12 @@ public class QuanLyHoaDon extends JPanel {
 				}
 			}
 		});
-		btnXoa.setBounds(159, 191, 85, 21);
+		btnXoa.setBounds(335, 191, 83, 38);
 		add(btnXoa);
 		
 		JButton btnTimKiem = new JButton("Tìm Kiếm");
+		btnTimKiem.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnTimKiem.setBackground(Color.ORANGE);
 		btnTimKiem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int flag = 0;
@@ -199,10 +212,12 @@ public class QuanLyHoaDon extends JPanel {
 				}
 			}
 		});
-		btnTimKiem.setBounds(266, 191, 99, 21);
+		btnTimKiem.setBounds(478, 191, 96, 38);
 		add(btnTimKiem);
 		
 		JButton btnSua = new JButton("Xóa Trắng");
+		btnSua.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnSua.setBackground(Color.ORANGE);
 		btnSua.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				txtMaHD.setText("");
@@ -214,7 +229,7 @@ public class QuanLyHoaDon extends JPanel {
 				dateNgayGiaoHang.setDate(null);
 			}
 		});
-		btnSua.setBounds(375, 191, 109, 21);
+		btnSua.setBounds(631, 191, 109, 38);
 		add(btnSua);
 		
 		
@@ -237,7 +252,7 @@ public class QuanLyHoaDon extends JPanel {
 		JScrollPane scrollTable = new JScrollPane(tableHoaDon);
 		tableHoaDon.getRowHeight(20);
 		add(scrollTable);
-		scrollTable.setBounds(23, 222, 904, 220);
+		scrollTable.setBounds(23, 239, 904, 220);
 		
 		loadHoaDonToTable();
 	}

@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Color;
 
 public class MatHang extends JPanel {
 	private DefaultTableModel modelNhanVien;
@@ -27,7 +29,9 @@ public class MatHang extends JPanel {
 		setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("MẶT HÀNG");
-		lblNewLabel.setBounds(190, 10, 71, 20);
+		lblNewLabel.setForeground(Color.RED);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblNewLabel.setBounds(178, 10, 135, 20);
 		add(lblNewLabel);
 		
 		String[] colHeader = { "Mã Sản Phẩm", "Tên Sản Phẩm", "Số Lượng Bán Được" };

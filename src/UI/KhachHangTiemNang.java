@@ -30,7 +30,7 @@ public class KhachHangTiemNang extends JPanel {
 		JLabel lblNewLabel = new JLabel("Khách Hàng Tiềm Năng");
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel.setBounds(111, 10, 246, 25);
+		lblNewLabel.setBounds(272, 10, 246, 25);
 		add(lblNewLabel);
 		
 		String[] colHeader = { "Mã Khách Hàng", "Tên Khách Hàng", "Số Lượng Hóa Đơn" };
@@ -39,7 +39,7 @@ public class KhachHangTiemNang extends JPanel {
 		
 		JScrollPane scrollPane = new JScrollPane(tableNhanVien);
 		add(scrollPane);
-		scrollPane.setBounds(23, 45, 394, 186);
+		scrollPane.setBounds(23, 45, 685, 206);
 		
 		while (modelNhanVien.getRowCount() != 0) {
 			modelNhanVien.removeRow(0);
